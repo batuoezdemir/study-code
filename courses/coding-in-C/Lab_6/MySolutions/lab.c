@@ -29,8 +29,5 @@ int main(void) {
     fputs("Hallo Welt!\n", f2);
     fprintf(f2, "Grüßen\n");
     fclose(f);  
-
-    
-
     fclose(f2);
 }
