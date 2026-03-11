@@ -86,4 +86,143 @@ Note: Write the answers for the questions in the code as comments.
 * Fix the issue when using __uint8_t__ by using an integer and static casts instead.
 * Which other portable data types would make sense in this example?
 
+## 🟡 Section III: Student Grade Report Formatter
 
+This exercise practices the following C++ concepts:
+
+* Call-by-reference (references)
+* `std::string`
+* Formatted output with `std::cout`
+* I/O manipulators
+
+### Task
+
+Write a C++ program that reads information about a student, calculates the final grade, and prints a formatted report card.
+
+Your program must be divided into **multiple functions**.
+
+---
+
+### Step 1 — Read Student Data
+
+Create the following function:
+
+```cpp
+void readStudentData(__ name,
+                     __ homework,
+                     __ midterm,
+                     __ finalExam);
+```
+
+The function should:
+
+1. Ask the user for the **student name**
+2. Ask for three scores:
+
+   * Homework
+   * Midterm
+   * Final exam
+3. Store the results using **call-by-reference parameters**
+
+#### Example Input
+
+```
+Enter student name: Alice
+Homework score: 87
+Midterm score: 78
+Final exam score: 92
+```
+
+---
+
+### Step 2 — Calculate the Final Grade
+
+Create the function:
+
+```cpp
+void calculateGrade(__ homework,
+                    __ midterm,
+                    __ finalExam,
+                    __ finalGrade,
+                    __ letterGrade);
+```
+that calculates the final grade based on the rules below:
+
+### Grade Weights
+
+| Component  | Weight |
+| ---------- | ------ |
+| Homework   | 40%    |
+| Midterm    | 25%    |
+| Final Exam | 35%    |
+
+## Letter Grades
+
+| Range | Grade |
+| ----- | ----- |
+| ≥ 90  | A     |
+| ≥ 80  | B     |
+| ≥ 70  | C     |
+| ≥ 60  | D     |
+| < 60  | F     |
+
+Return the results using **reference parameters**.
+
+---
+
+### Step 3 — Print a Formatted Report
+
+Create the function:
+
+```cpp
+void printReport(__ name,
+                 __ homework,
+                 __ midterm,
+                 __ finalExam,
+                 __ finalGrade,
+                 __ letterGrade);
+```
+that creates the formatted report card.
+
+It also determines a status string based on the letter grade using __string comparison__:
+
+```
+Letter       	Status
+-----------------------
+A,B,C	        PASS
+D	            CONDITIONAL PASS
+F	            FAIL
+```
+
+The function __printReport__ should use manipulators to format the report card.
+
+#### Example Output
+
+```
+-------------------------------------
+Student Report
+-------------------------------------
+Name: Alice
+
+Scores
+-------------------------------------
+Homework        : 87.00
+Midterm         : 78.00
+Final Exam      : 92.00
+
+Final Grade     : 86.05
+Letter Grade    : B
+Status          : Pass
+-------------------------------------
+```
+
+---
+
+### Step 4 — Main Function
+
+Your `main()` should:
+
+1. Declare all required variables
+2. Call the functions in the correct order
+3. Print the final report
+4. Write the report into a text-file using __std::ofstream__
