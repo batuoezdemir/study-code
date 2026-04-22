@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <cstddef>
 
 template <typename T>
 void swap(T &firstValue, T &secondValue)
@@ -100,5 +102,22 @@ void composeTags(std::string label1, T value1, std::string label2, U value2)
 /* - The compiler enforces correctness at compile time
 /* - The function interface is simpler (fewer parameters)
 */
+
+template <typename T>
+void printVector(const std::vector<T> &data)
+{
+    std::cout << "[";
+
+    for (std::size_t i = 0; i < data.size(); i++)
+    {
+        std::cout << data[i];
+        if (i < data.size() - 1)
+        {
+            std::cout << ", ";
+        }
+    }
+
+    std::cout << "]" << '\n';
+}
 
 #endif
