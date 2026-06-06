@@ -16,7 +16,7 @@ public:
 
 int main()
 {
-    Pair onePair(3, "hallo");
+    Pair onePair("Hallo", 3);
 
     std::cout << onePair.getValue1() << std::endl;
     std::cout << onePair.getValue2() << std::endl;

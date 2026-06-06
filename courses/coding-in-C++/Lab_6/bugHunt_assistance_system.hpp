@@ -1,9 +1,9 @@
 #ifndef ASSISTANCE_SYSTEM_HPP
 #define ASSISTANCE_SYSTEM_HPP
-
 #include <iostream>
 #include <string>
 #include <vector>
+#include <memory>
 
 #include "bugHunt_vehicle.hpp"
 
@@ -73,7 +73,7 @@ public:
 class ParkingAssistant
 {
 private:
-    std::vector<DistanceSensor *> sensors;
+    std::vector<std::unique_ptr<DistanceSensor>> sensors;
     double warning_distance_m;
 
 public:

@@ -68,7 +68,7 @@ void EmergencyBrakeSystem::evaluate(Vehicle &vehicle,
         return;
     }
 
-    if (front_sensor.get_distance() > critical_distance_m)
+    if (front_sensor.get_distance() > critical_distance_m) // größer macht kein sinn glaub 
     {
         std::cout << "[EmergencyBrakeSystem] Emergency braking triggered.\n";
         vehicle.brake(30.0);
@@ -117,7 +117,7 @@ void AdaptiveCruiseControl::evaluate(Vehicle &vehicle,
         return;
     }
 
-    if (front_sensor.get_distance() < minimum_distance_m)
+    if (front_sensor.get_distance() < minimum_distance_m) // abstand ist zu gering
     {
         std::cout << "[AdaptiveCruiseControl] Vehicle ahead is close. Accelerating.\n";
         vehicle.accelerate(5.0);
